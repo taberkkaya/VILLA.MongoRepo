@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="wwwroot\focus-bootstrap-main\theme\.vscode\settings.json" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Villa.Business\Villa.Business.csproj" />
     <ProjectReference Include="..\Villa.DataAccess\Villa.DataAccess.csproj" />
   </ItemGroup>
