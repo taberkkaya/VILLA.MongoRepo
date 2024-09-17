@@ -8,7 +8,7 @@ namespace Villa.DataAccess.Abstract
         Task CreateAsync(T entity);
         Task UpdateAsync(T entity);
         Task DeleteAsync(ObjectId id);
-        Task<List<T>> GetListAsync(T entity);
+        Task<List<T>> GetListAsync();
         Task<T> GetByIdAsync(ObjectId id);
         Task<int> GetCountAsync();
         Task<List<T>> GetFilteredListAsync(Expression<Func<T, bool>> predicate);

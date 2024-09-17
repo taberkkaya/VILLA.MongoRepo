@@ -43,7 +43,7 @@ namespace Villa.DataAccess.Repositories
             return await _context.Set<T>().Where(predicate).ToListAsync();
         }
 
-        public async Task<List<T>> GetListAsync(T entity)
+        public async Task<List<T>> GetListAsync()
         {
             return await _context.Set<T>().ToListAsync();
         }
