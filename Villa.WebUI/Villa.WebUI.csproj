@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Villa.Business\Villa.Business.csproj" />
     <ProjectReference Include="..\Villa.DataAccess\Villa.DataAccess.csproj" />
   </ItemGroup>
 
