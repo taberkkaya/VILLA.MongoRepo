@@ -3,6 +3,7 @@ using MongoDB.Bson;
 using System.Linq.Expressions;
 using Villa.DataAccess.Abstract;
 using Villa.DataAccess.Context;
+using Villa.Entity.Entities;
 
 namespace Villa.DataAccess.Repositories
 {
@@ -23,14 +24,16 @@ namespace Villa.DataAccess.Repositories
 
         public async Task DeleteAsync(ObjectId id)
         {
-            var value = GetByIdAsync(id);
+            var value = await GetByIdAsync(id);
             _context.Remove(value);
             await _context.SaveChangesAsync();
         }
 
         public async Task<T> GetByIdAsync(ObjectId id)
         {
-            return await _context.Set<T>().FindAsync(id);
+            var value = await _context.Set<T>().FindAsync(id);
+
+            return value;
         }
 
         public async Task<int> GetCountAsync()

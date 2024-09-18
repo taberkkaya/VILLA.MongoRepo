@@ -1,0 +1,27 @@
+﻿@model CreateBannerDto
+@{
+    ViewData["Title"] = "Create New Banner";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form method="post">
+
+    <label>ImgUrl</label>
+    <input type="text" asp-for="ImgUrl" class="form-control"/>
+
+    <br />
+
+    <label>Title</label>
+    <input type="text" asp-for="Title" class="form-control" />
+
+    <br />
+
+    <label>City</label>
+    <input type="text" asp-for="City" class="form-control" />
+
+    <br />
+
+    <button class="btn btn-outline-dark">Save</button>
+
+</form>
+

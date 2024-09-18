@@ -23,12 +23,12 @@
             <td>@item.City</td>
             <td>@item.Title</td>
             <td>
-                <a asp-asp-controller="Banner" asp-action="DeleteBanner" asp-route-itemid="@item.Id" class="btn btn-outline-danger">Delete</a>
-                <a asp-asp-controller="Banner" asp-action="UpdateBanner" asp-route-itemid="@item.Id" class="btn btn-outline-danger">Update</a>
+                <a asp-controller="Banner" asp-action="DeleteBanner" asp-route-id="@item.Id" class="btn btn-outline-danger">Delete</a>
+                <a asp-controller="Banner" asp-action="UpdateBanner" asp-route-id="@item.Id" class="btn btn-outline-info">Update</a>
             </td>
         </tr>
     }
 </table>
 
-<a asp-asp-controller="Banner" asp-action="CreateBanner" class="btn btn-outline-dark">Create</a>
+<a asp-controller="Banner" asp-action="CreateBanner" class="btn btn-outline-dark">Create</a>
 

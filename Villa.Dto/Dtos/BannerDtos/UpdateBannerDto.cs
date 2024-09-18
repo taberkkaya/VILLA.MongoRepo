@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MongoDB.Bson;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,7 @@ namespace Villa.Dto.Dtos.BannerDtos
 {
     public class UpdateBannerDto
     {
+        public ObjectId Id { get; set; }
         public string? City { get; set; }
         public string? Title { get; set; }
         public string? ImgUrl { get; set; }
