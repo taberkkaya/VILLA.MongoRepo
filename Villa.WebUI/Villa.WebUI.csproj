@@ -11,12 +11,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="7.0.12" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Villa.Business\Villa.Business.csproj" />
     <ProjectReference Include="..\Villa.DataAccess\Villa.DataAccess.csproj" />
+    <ProjectReference Include="..\Villa.Dto\Villa.Dto.csproj" />
   </ItemGroup>
 
 </Project>
