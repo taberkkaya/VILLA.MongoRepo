@@ -28,7 +28,7 @@ namespace Villa.WebUI.Controllers
         public async Task<IActionResult> DeleteContact(ObjectId id)
         {
             await contactService.TDeleteAsync(id);
-            return View();
+            return RedirectToAction("Index");
         }
 
         public IActionResult CreateContact()
@@ -41,6 +41,21 @@ namespace Villa.WebUI.Controllers
         {
             var map = mapper.Map<Contact>(createContactDto);
             await contactService.TCreateAsync(map);
+            return RedirectToAction("Index");
+        }
+
+        public async Task<IActionResult> UpdateContact(ObjectId id)
+        {
+            var contact = await contactService.TGetByIdAsync(id);
+            var map = mapper.Map<UpdateContactDto>(contact);
+            return View(map);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> UpdateContact(UpdateContactDto updateContactDto)
+        {
+            var map = mapper.Map<Contact>(updateContactDto);
+            await contactService.TUpdateAsync(map);
             return RedirectToAction("Index");
         }
 

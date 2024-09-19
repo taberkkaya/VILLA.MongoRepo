@@ -1,0 +1,22 @@
+﻿@model CreateCounterDto
+
+@{
+    ViewData["Title"] = "Create Counter";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form method="post">
+
+    <label>Title</label>
+    <input type="text" asp-for="Title" class="form-control" />
+
+    <br />
+
+    <label>Count</label>
+    <input type="number" asp-for="Count" class="form-control" />
+
+    <br />
+
+    <button class="btn btn-outline-dark">Save</button>
+
+</form>
