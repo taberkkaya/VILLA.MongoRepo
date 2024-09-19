@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Villa.Dto.Dtos.MessageDtos
 {
-    public class CreateMessageDtos
+    public class CreateMessageDto
     {
         public string? FullName { get; set; }
         public string? Email { get; set; }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Villa.Dto.Dtos.FeatureDtos
 {
-    public class CreateFeatureDtos
+    public class ResultFeatureDto
     {
         public ObjectId Id { get; set; }
         public string? ImgUrl { get; set; }

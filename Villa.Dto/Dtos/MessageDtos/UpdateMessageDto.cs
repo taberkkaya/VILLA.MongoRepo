@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Villa.Dto.Dtos.MessageDtos
 {
-    public class UpdateMessageDtos
+    public class UpdateMessageDto
     {
         public ObjectId Id { get; set; }
         public string? FullName { get; set; }
