@@ -1,0 +1,38 @@
+﻿@model CreateMessageDto
+
+
+@{
+    ViewData["Title"] = "CreateMessage";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form method="post">
+
+    <label>FullName</label>
+    <input type="text" asp-for="FullName" class="form-control" />
+
+    <br />
+
+    <label>Email</label>
+    <input type="text" asp-for="Email" class="form-control" />
+
+    <br />
+
+    <label>Subject</label>
+    <input type="text" asp-for="Subject" class="form-control" />
+
+    <br />
+
+    <label>MessageContent</label>
+    <input type="text" asp-for="MessageContent" class="form-control" />
+
+    <br />
+
+    <label>MessageDate</label>
+    <input type="text" asp-for="MessageDate" class="form-control" />
+
+    <br />
+
+    <button class="btn btn-outline-dark">Save</button>
+
+</form>
