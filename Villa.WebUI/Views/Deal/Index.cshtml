@@ -1,0 +1,49 @@
+﻿@model List<ResultDealDto>
+
+@{
+    ViewData["Title"] = "Deal List";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-hover table-bordered">
+    @{
+        int count = 0;
+    }
+
+    <tr>
+        <th>#</th>
+        <th>Type</th>
+        <th>ImgUrl</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Square</th>
+        <th>Floor</th>
+        <th>RoomCount</th>
+        <th>HasParkingArea</th>
+        <th>PaymentType</th>
+        <th>Operations</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <td>@count</td>
+            <td>@item.Type</td>
+            <td>@item.ImgUrl</td>
+            <td>@item.Title</td>
+            <td>@item.Description</td>
+            <td>@item.Square</td>
+            <td>@item.Floor</td>
+            <td>@item.RoomCount</td>
+            <td>@item.HasParkingArea</td>
+            <td>@item.PaymentType</td>
+            <td>
+                <a asp-controller="Deal" asp-action="DeleteDeal" asp-route-id="@item.Id" class="btn btn-outline-danger">Delete</a>
+                <a asp-controller="Deal" asp-action="UpdateDeal" asp-route-id="@item.Id" class="btn btn-outline-info">Update</a>
+            </td>
+        </tr>
+    }
+</table>
+
+<a asp-controller="Deal" asp-action="CreateDeal" class="btn btn-outline-dark">Create</a>
