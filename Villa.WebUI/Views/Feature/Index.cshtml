@@ -1,0 +1,46 @@
+﻿@model List<ResultFeatureDto>
+
+@{
+    ViewData["Title"] = "Feature List";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-hover table-bordered">
+    @{
+        int count = 0;
+    }
+
+    <tr>
+        <th>#</th>
+        <th>ImgUrl</th>
+        <th>Title</th>
+        <th>Title</th>
+        <th>Subtitle</th>
+        <th>Square</th>
+        <th>Contract</th>
+        <th>Payment</th>
+        <th>Safety</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <td>@count</td>
+            <td>@item.ImgUrl</td>
+            <td>@item.Title</td>
+            <td>@item.Title</td>
+            <td>@item.Subtitle</td>
+            <td>@item.Square</td>
+            <td>@item.Contract</td>
+            <td>@item.Payment</td>
+            <td>@item.Safety</td>
+            <td>
+                <a asp-controller="Feature" asp-action="DeleteFeature" asp-route-id="@item.Id" class="btn btn-outline-danger">Delete</a>
+                <a asp-controller="Feature" asp-action="UpdateFeature" asp-route-id="@item.Id" class="btn btn-outline-info">Update</a>
+            </td>
+        </tr>
+    }
+</table>
+
+<a asp-controller="Feature" asp-action="CreateFeature" class="btn btn-outline-dark">Create</a>
