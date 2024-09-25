@@ -1,0 +1,57 @@
+﻿@model CreateProductDto
+
+@{
+    ViewData["Title"] = "Product Create";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form method="post">
+
+    <label>ImgUrl</label>
+    <input type="text" asp-for="ImgUrl" class="form-control" />
+
+    <br />
+
+    <label>Category</label>
+    <input type="text" asp-for="Category" class="form-control" />
+
+    <br />
+
+    <label>Price</label>
+    <input type="text" asp-for="Price" class="form-control" />
+
+    <br />
+
+    <label>Title</label>
+    <input type="text" asp-for="Title" class="form-control" />
+
+    <br />
+
+    <label>BedroomCount</label>
+    <input type="text" asp-for="BedroomCount" class="form-control" />
+
+    <br />
+
+    <label>BathRoomCount</label>
+    <input type="text" asp-for="BathRoomCount" class="form-control" />
+
+    <br />
+
+    <label>Area</label>
+    <input type="text" asp-for="Area" class="form-control" />
+
+    <br />    
+    
+    <label>Floor</label>
+    <input type="text" asp-for="Floor" class="form-control" />
+
+    <br />    
+
+    <label>ParkingCount</label>
+    <input type="text" asp-for="ParkingCount" class="form-control" />
+
+    <br />
+
+    <button class="btn btn-outline-dark">Save</button>
+
+</form>
