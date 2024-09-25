@@ -1,0 +1,22 @@
+﻿@model UpdateQuestDto
+
+@{
+    ViewData["Title"] = "Update Quest";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form method="post">
+
+    <label>Question</label>
+    <input type="text" asp-for="Question" class="form-control" />
+
+    <br />
+
+    <label>Answer</label>
+    <input type="text" asp-for="Answer" class="form-control" />
+
+    <br />
+
+    <button class="btn btn-outline-dark">Update</button>
+
+</form>
