@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using MongoDB.Bson;
 using Villa.Business.Abstract;
 using Villa.Dto.Dtos.ProductDtos;
+using Villa.Dto.Dtos.QuestDtos;
 using Villa.Entity.Entities;
 
 namespace Villa.WebUI.Controllers
@@ -47,8 +48,16 @@ namespace Villa.WebUI.Controllers
         public async Task<IActionResult> UpdateProduct(ObjectId id)
         {
             var product = await productService.TGetByIdAsync(id);
-            var map = mapper.Map<Product>(product);
+            var map = mapper.Map<UpdateProductDto>(product);
             return View(map);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> UpdateProduct(UpdateProductDto updateProductDto)
+        {
+            var map = mapper.Map<Product>(updateProductDto);
+            await productService.TUpdateAsync(map);
+            return RedirectToAction("Index");
         }
 
     }
