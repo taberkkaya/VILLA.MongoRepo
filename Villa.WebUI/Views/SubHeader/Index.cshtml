@@ -1,7 +1,6 @@
-﻿@model List<ResultVideoDto>
-
+﻿@model List<ResultSubHeaderDto>
 @{
-    ViewData["Title"] = "Video List";
+    ViewData["Title"] = "SubHeader List";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
@@ -11,7 +10,12 @@
     }
     <tr>
         <th>#</th>
-        <th>Video Url</th>
+        <th>Address </th>
+        <th>Email </th>
+        <th>Facebook </th>
+        <th>Twitter </th>
+        <th>LinkedIn </th>
+        <th>Instagram </th>
         <th>Operations</th>
     </tr>
     @foreach (var item in Model)
@@ -19,20 +23,25 @@
         count++;
         <tr>
             <td>@count</td>
-            <td>@item.VideoUrl</td>
+            <td>@item.Address </td>
+            <td>@item.Email </td>
+            <td>@item.Facebook </td>
+            <td>@item.Twitter </td>
+            <td>@item.LinkedIn </td>
+            <td>@item.Instagram </td>
             <td>
                 @* <a asp-controller="Video" asp-action="DeleteVideo" asp-route-id="@item.Id" class="btn btn-outline-danger">Delete</a> *@
-                <button onclick="deleteVideo(this)" id="@item.Id" class="btn btn-outline-danger">Delete</button>
-                <a asp-controller="Video" asp-action="UpdateVideo" asp-route-id="@item.Id" class="btn btn-outline-info">Update</a>
+                <button onclick="deleteSubHeader(this)" id="@item.Id" class="btn btn-outline-danger">Delete</button>
+                <a asp-controller="SubHeader" asp-action="UpdateSubHeader" asp-route-id="@item.Id" class="btn btn-outline-info">Update</a>
             </td>
         </tr>
     }
 </table>
 
-<a asp-controller="Video" asp-action="CreateVideo" class="btn btn-outline-dark">Create</a>
+<a asp-controller="SubHeader" asp-action="CreateSubHeader" class="btn btn-outline-dark">Create</a>
 
 <script>
-    function deleteVideo(button) {
+    function deleteSubHeader(button) {
         var id = button.getAttribute("id");
         Swal.fire({
 
@@ -46,7 +55,7 @@
             cancelButtonText: 'İptal'
         }).then((result) => {
             if (result.isConfirmed) {
-                window.location.href = "/Video/DeleteVideo/" + id;
+                window.location.href = "/SubHeader/DeleteSubHeader/" + id;
             }
         });
     };
