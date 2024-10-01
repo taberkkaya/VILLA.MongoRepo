@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using MongoDB.Bson;
 using Villa.Business.Abstract;
+using Villa.Business.Validators;
 using Villa.Dto.Dtos.QuestDtos;
 using Villa.Entity.Entities;
 
@@ -33,7 +34,23 @@ namespace Villa.WebUI.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateQuest(CreateQuestDto createQuestDto)
         {
+            ModelState.Clear(); 
+
             var map = mapper.Map<Quest>(createQuestDto);
+            
+            var validator = new QuestionValidator();
+            var result = validator.Validate(map);
+            
+            if (!result.IsValid)
+            {
+                result.Errors.ForEach(x =>
+                {
+                    ModelState.AddModelError(x.PropertyName, x.ErrorMessage);
+                });
+
+                return View();
+            }
+
             await questService.TCreateAsync(map);
             return RedirectToAction("Index");
         }

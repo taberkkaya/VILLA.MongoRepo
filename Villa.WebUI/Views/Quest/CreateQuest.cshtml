@@ -9,11 +9,12 @@
 
     <label>Question</label>
     <input type="text" asp-for="Question" class="form-control" />
-
+    <span asp-validation-for="Question" class="text-danger"></span>
     <br />
 
     <label>Answer</label>
     <input type="text" asp-for="Answer" class="form-control" />
+    <span asp-validation-for="Answer" class="text-danger"></span>
 
     <br />
 
