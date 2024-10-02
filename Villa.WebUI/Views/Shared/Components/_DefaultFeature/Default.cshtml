@@ -1,0 +1,46 @@
+﻿@model List<ResultFeatureDto>
+
+<div class="featured section">
+    <div class="container">
+        @foreach(var item in Model)
+        {
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="left-image">
+                        <img src="~/VillaAgency-1.0.0/@item.ImgUrl" alt="">
+                    <a href="property-details.html"><img src="~/VillaAgency-1.0.0/assets/images/featured-icon.png" alt="" style="max-width: 60px; padding: 0px;"></a>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="section-heading">
+                    <h6>| @item.Title</h6>
+                    <h2>@item.Subtitle</h2>
+                </div>
+                    @await Component.InvokeAsync("_DefaultQuest")
+            </div>
+            <div class="col-lg-3">
+                <div class="info-table">
+                        <ul>
+                            <li>
+                                <img src="~/VillaAgency-1.0.0/assets/images/info-icon-01.png" alt="" style="max-width: 52px;">
+                                <h4>@item.Square<br><span>Total Flat Space</span></h4>
+                            </li>
+                            <li>
+                                <img src="~/VillaAgency-1.0.0/assets/images/info-icon-02.png" alt="" style="max-width: 52px;">
+                                <h4>Contract<br><span>@item.Contract</span></h4>
+                            </li>
+                            <li>
+                                <img src="~/VillaAgency-1.0.0/assets/images/info-icon-03.png" alt="" style="max-width: 52px;">
+                                <h4>Payment<br><span>@item.Payment</span></h4>
+                            </li>
+                            <li>
+                                <img src="~/VillaAgency-1.0.0/assets/images/info-icon-04.png" alt="" style="max-width: 52px;">
+                                <h4>Safety<br><span>@item.Safety</span></h4>
+                            </li>
+                        </ul>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+</div>
