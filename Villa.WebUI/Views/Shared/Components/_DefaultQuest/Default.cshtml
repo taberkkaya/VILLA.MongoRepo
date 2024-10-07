@@ -1,15 +1,23 @@
 ﻿@model List<ResultQuestDto>
 
+@{
+    var count = 0;
+    var ariaExpended = "";
+    var classShown = "";
+}
+
 <div class="accordion" id="accordionExample">
     @foreach(var item in Model)
     {
+        count++;
+        if (count == 1) { ariaExpended = "true"; classShown = "show"; } else { ariaExpended = "false"; classShown = ""; }
         <div class="accordion-item">
             <h2 class="accordion-header" id="headingOne">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="@ariaExpended" aria-controls="collapseOne">
                     @item.Question
                 </button>
             </h2>
-            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div id="collapseOne" class="accordion-collapse collapse @classShown" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
                     @item.Answer
                 </div>
